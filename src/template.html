@@ -5,5 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <form action="post" id="form">
+        <input
+          id="location"
+          name="location"
+          type="text"
+          placeholder="Location"
+        />
+        <select name="unit" id="unit">
+          <option value="US" class="unit">°F</option>
+          <option value="METRIC" class="unit">°C</option>
+        </select>
+      </form>
+      <div class="content">
+        <div class="date">Feb 15 11:55 AM</div>
+        <div class="current">
+          <div class="temp">
+            <span id="current-temp">82</span>
+            <span id="current-unit" class="unit">F</span>
+          </div>
+          <div class="condition-and-desc">
+            <div class="condition" id="current-condition">Partially Cloudy</div>
+            <div id="current-desc">
+              Similar temperatures continuing with no rain expected.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="next-days"></div>
+    </div>
+  </body>
 </html>

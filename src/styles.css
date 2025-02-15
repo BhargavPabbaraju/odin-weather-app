@@ -1,0 +1,81 @@
+:root {
+  --morning: #ffffc8;
+  --night: #597a9b;
+  --day: #96e0ff;
+  --evening: #ffac59;
+  --small-font-size: 14px;
+  --medium-font-size: 20px;
+  --large-font-size: 72px;
+  --secondary: grey;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--day);
+  font-size: var(--medium-font-size);
+}
+
+.container {
+  margin: auto;
+  padding: 3rem;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+input,
+select,
+option {
+  padding: 8px;
+  border-radius: 8px;
+  border: solid 1px black;
+  font-size: var(--medium-font-size);
+}
+
+.unit::before {
+  content: "°";
+}
+
+.content {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.current {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+}
+.condition-and-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 16px;
+}
+
+#current-desc {
+  font-size: var(--small-font-size);
+  color: var(--secondary);
+}
+
+#current-temp {
+  font-size: var(--large-font-size);
+}
+
+.temp {
+  display: flex;
+}
+
+.date {
+  font-size: var(--small-font-size);
+}

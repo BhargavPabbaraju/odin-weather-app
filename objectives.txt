@@ -1,0 +1,22 @@
+User actions
+------------
+- Enter a location 
+- Change the units
+
+
+What to display
+---------------
+- temp - PRIMARY
+- datetime
+- conditions
+- description
+- icon
+- resolved address
+- Next 3 days min max temp
+    - conditions
+    - description
+
+UI
+--
+- Change background color based on time of day - (Morning/Day/Night)
+- Display icon accordingly
