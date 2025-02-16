@@ -3,7 +3,7 @@
   --night: #597a9b;
   --day: #96e0ff;
   --evening: #ffac59;
-  --small-font-size: 14px;
+  --small-font-size: 16px;
   --medium-font-size: 20px;
   --large-font-size: 72px;
   --secondary: grey;
@@ -150,6 +150,7 @@ option {
 
 #location-input {
   position: relative;
+  color: var(--card-color);
 }
 
 #location-icon {
@@ -160,4 +161,49 @@ option {
 #location-input > input {
   padding-left: calc(var(--medium-font-size) * 2);
   width: 100%;
+}
+
+#next-days {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  margin-top: calc(var(--medium-font-size) * 2);
+}
+
+.card {
+  width: 33.33%;
+  color: var(--font-color);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 8px;
+  justify-content: space-between;
+}
+
+.day {
+  display: flex;
+  justify-content: center;
+}
+
+.temp-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.icon-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-row > img {
+  width: calc(var(--medium-font-size) * 4);
+}
+
+.icon-row > div {
+  color: var(--secondary-front-color);
+  font-size: var(--small-font-size);
+  text-align: center;
 }

@@ -49,7 +49,7 @@ export function getDateText(time) {
   return `${day}, ${hours}:${minutes} ${ampm}`;
 }
 
-function getDay(day) {
+export function getDay(day) {
   switch (day) {
     case 0:
       return "Sun";

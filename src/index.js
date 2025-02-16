@@ -32,6 +32,9 @@ function onSubmit(e) {
 }
 
 function changeUnit(e) {
+  if (utils.UnitGroup[e.target.value] === state.unitGroup) {
+    return;
+  }
   state.unitGroup = utils.UnitGroup[e.target.value];
   fetchData();
 }
@@ -42,8 +45,6 @@ function initialRender() {
 
   const unitSelect = document.getElementById("unit-select");
   unitSelect.addEventListener("click", changeUnit);
-
-  view.renderIcon();
 }
 
 initialRender();
