@@ -8,11 +8,11 @@ export const UnitGroup = {
   },
 };
 
-const TimeOfDay = {
-  DAY: "Day",
-  MORNING: "Morning",
-  NIGHT: "Night",
-  EVENING: "Evening",
+export const TimeOfDay = {
+  DAY: "--day",
+  MORNING: "--morning",
+  NIGHT: "--night",
+  EVENING: "--evening",
 };
 
 export function getTimeOfDay(time = "11:50:00") {
@@ -42,7 +42,7 @@ export const icons = {
 export function getDateText(time) {
   const today = new Date();
   const day = getDay(today.getDay());
-  let hours = time.split(":")[0];
+  let hours = parseInt(time.split(":")[0]);
   const minutes = time.split(":")[1];
   const ampm = hours > 12 ? "PM" : "AM";
   hours = hours > 12 ? hours - 12 : hours;

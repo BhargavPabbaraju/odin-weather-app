@@ -20,7 +20,7 @@ body {
   font-size: var(--medium-font-size);
 }
 
-.container {
+#container {
   margin: auto;
   padding: 3rem;
 }
@@ -80,6 +80,7 @@ option {
 #current-desc {
   font-size: var(--small-font-size);
   color: var(--secondary);
+  text-align: right;
 }
 
 #current-temp {
