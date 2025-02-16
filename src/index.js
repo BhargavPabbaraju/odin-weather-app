@@ -50,6 +50,14 @@ function initialRender() {
 
   const unitSelect = document.getElementById("unit-select");
   unitSelect.addEventListener("click", changeUnit);
+  document
+    .getElementById("locationInput")
+    .addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        this.form.submit();
+      }
+    });
 }
 
 initialRender();
