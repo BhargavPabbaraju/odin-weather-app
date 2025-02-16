@@ -9,6 +9,7 @@ const state = {
 };
 
 async function fetchData() {
+  document.getElementById("content").replaceChildren();
   const url =
     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/` +
     `${state.location}?unitGroup=${state.unitGroup}&key=${utils.API_KEY}&contentType=json`;

@@ -9,32 +9,84 @@ export async function renderIcon(img, icon = "partly-cloudy-day") {
 }
 
 function renderCurrentInfo(state, data) {
-  const temp = document.getElementById("current-temp");
+  const current = document.createElement("div");
+  current.classList.add("current");
+  current.classList.add("shadow");
+
+  const tempRow = document.createElement("div");
+  tempRow.classList.add("temp");
+
+  const temp = document.createElement("span");
+  temp.setAttribute("id", "current-temp");
   temp.innerText = data.currentConditions.temp;
+  tempRow.appendChild(temp);
 
-  const unit = document.getElementById("current-unit");
+  const unit = document.createElement("span");
+  unit.setAttribute("id", "current-unit");
   unit.innerText = utils.UnitGroup.getUnit(state.unitGroup);
+  tempRow.appendChild(unit);
 
-  const condition = document.getElementById("current-condition");
+  current.appendChild(tempRow);
+
+  const conditionAndDescRow = document.createElement("div");
+  conditionAndDescRow.classList.add("condition-and-desc");
+
+  const conditionRow = document.createElement("div");
+  conditionRow.classList.add("condition");
+
+  const condition = document.createElement("div");
+  condition.setAttribute("id", "current-condition");
   condition.innerText = data.currentConditions.conditions;
+  conditionRow.appendChild(condition);
 
-  const img = document.getElementById("current-icon");
+  const img = document.createElement("img");
+  img.classList.add("icon");
+  img.setAttribute("id", "current-icon");
+  img.setAttribute("alt", data.currentConditions.icon);
   renderIcon(img, data.currentConditions.icon);
 
-  const desc = document.getElementById("current-desc");
+  conditionRow.appendChild(img);
+
+  conditionAndDescRow.appendChild(conditionRow);
+
+  const desc = document.createElement("div");
+  desc.setAttribute("id", "current-desc");
   desc.innerText = data.description;
+
+  conditionAndDescRow.appendChild(desc);
+
+  current.appendChild(conditionAndDescRow);
+
+  return current;
 }
 
-export function renderInfo(state, data) {
-  const address = document.getElementById("address");
-  address.innerText = data.resolvedAddress;
+function renderDetails(data) {
+  const details = document.createElement("div");
+  details.classList.add("details");
 
-  const date = document.getElementById("current-date");
+  const date = document.createElement("div");
+  date.setAttribute("id", "current-date");
   const time = data.currentConditions.datetime;
   date.innerText = utils.getDateText(time);
   changeTheme(time);
 
-  renderCurrentInfo(state, data);
+  const address = document.createElement("div");
+  address.setAttribute("id", "address");
+  address.innerText = data.resolvedAddress;
+
+  details.appendChild(date);
+  details.appendChild(address);
+
+  return details;
+}
+
+export function renderInfo(state, data) {
+  const content = document.getElementById("content");
+  content.replaceChildren();
+
+  content.appendChild(renderDetails(data));
+
+  content.appendChild(renderCurrentInfo(state, data));
   renderNextDays(state, data);
 }
 
