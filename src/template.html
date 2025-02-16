@@ -13,21 +13,29 @@
           name="location"
           type="text"
           placeholder="Location"
+          required
         />
-        <select name="unit" id="unit">
-          <option value="US" class="unit">°F</option>
+        <select name="unit" id="unit-select">
           <option value="METRIC" class="unit">°C</option>
+          <option value="US" class="unit">°F</option>
         </select>
       </form>
       <div class="content">
-        <div class="date">Feb 15 11:55 AM</div>
+        <div class="details">
+          <div id="current-date">Sun, 11:55 AM</div>
+          <div id="address">Tampa</div>
+        </div>
         <div class="current">
           <div class="temp">
-            <span id="current-temp">82</span>
-            <span id="current-unit" class="unit">F</span>
+            <span id="current-temp">32</span>
+            <span id="current-unit" class="unit">C</span>
           </div>
           <div class="condition-and-desc">
-            <div class="condition" id="current-condition">Partially Cloudy</div>
+            <div class="condition">
+              <div id="current-condition">Partially Cloudy</div>
+              <img class="icon" id="current-icon" alt="partially-cloudy" />
+            </div>
+
             <div id="current-desc">
               Similar temperatures continuing with no rain expected.
             </div>
