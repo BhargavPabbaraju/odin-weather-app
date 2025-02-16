@@ -20,6 +20,7 @@
   --primary-color: var(--day);
   --secondary-color: var(--secondary-day);
   --font-color: var(--card-color);
+  --error-color: darkred;
 }
 
 [data-theme="morning"] {
@@ -203,7 +204,10 @@ option {
 }
 
 .icon-row > div {
-  color: var(--secondary-front-color);
   font-size: var(--small-font-size);
   text-align: center;
+}
+
+.error-text {
+  color: var(--error-color);
 }

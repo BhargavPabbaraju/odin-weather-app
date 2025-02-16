@@ -14,11 +14,15 @@ async function fetchData() {
     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/` +
     `${state.location}?unitGroup=${state.unitGroup}&key=${utils.API_KEY}&contentType=json`;
 
-  const response = await fetch(url);
-  const data = await response.json();
+  view.renderLoading();
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
 
-  console.log(data);
-  view.renderInfo(state, data);
+    view.renderInfo(state, data);
+  } catch {
+    view.renderError(state);
+  }
 }
 
 function onSubmit(e) {

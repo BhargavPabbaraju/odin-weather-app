@@ -23,6 +23,7 @@ function renderCurrentInfo(state, data) {
 
   const unit = document.createElement("span");
   unit.setAttribute("id", "current-unit");
+  unit.classList.add("unit");
   unit.innerText = utils.UnitGroup.getUnit(state.unitGroup);
   tempRow.appendChild(unit);
 
@@ -154,4 +155,36 @@ function renderNextDays(state, data) {
   for (let i = 1; i < Math.min(3, days.length) + 1; i++) {
     nextDays.appendChild(renderNextDay(state, days[i]));
   }
+}
+
+export function renderError(state) {
+  const content = document.getElementById("content");
+  const div = document.createElement("div");
+  content.replaceChildren();
+  const errorMsgs = [
+    "Could not retrieve weather data for ",
+    state.location,
+    ". Please ensure it is a valid location.",
+  ];
+  errorMsgs.forEach((msg, index) => {
+    const span = document.createElement("span");
+    if (index !== 1) {
+      span.classList.add("error-text");
+    }
+    span.innerText = msg;
+    div.appendChild(span);
+  });
+  content.appendChild(div);
+}
+
+export function renderLoading() {
+  const input = document.getElementById("location");
+  input.setCustomValidity("");
+  const content = document.getElementById("content");
+  const div = document.createElement("div");
+  const nextDays = document.getElementById("next-days");
+  nextDays.replaceChildren();
+  content.replaceChildren();
+  div.innerText = `Retreiving weather data...`;
+  content.appendChild(div);
 }
