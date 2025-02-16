@@ -147,3 +147,17 @@ option {
 .box-shadow {
   box-shadow: 4px 4px 4px grey;
 }
+
+#location-input {
+  position: relative;
+}
+
+#location-icon {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+}
+#location-input > input {
+  padding-left: calc(var(--medium-font-size) * 2);
+  width: 100%;
+}
