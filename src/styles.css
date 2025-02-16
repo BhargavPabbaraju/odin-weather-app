@@ -94,7 +94,6 @@ option {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  width: max(50vw, 420px);
 }
 
 .current {
@@ -161,7 +160,6 @@ option {
 }
 #location-input > input {
   padding-left: calc(var(--medium-font-size) * 2);
-  width: 100%;
 }
 
 #next-days {
