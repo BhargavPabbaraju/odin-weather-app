@@ -9,15 +9,57 @@
   --secondary: grey;
   --night-color: #ffff99;
 
+  --secondary-night: #2b3a4a;
+  --secondary-evening: #bf8143;
+  --secondary-day: #568295;
+  --secondary-morning: #a5a564;
+
   --card-color: black;
+
+  /* Default */
+  --primary-color: var(--day);
+  --secondary-color: var(--secondary-day);
+  --font-color: var(--card-color);
+}
+
+[data-theme="morning"] {
+  --primary-color: var(--morning);
+  --secondary-color: var(--secondary-morning);
+  --font-color: var(--card-color);
+}
+
+[data-theme="day"] {
+  --primary-color: var(--day);
+  --secondary-color: var(--secondary-day);
+  --font-color: var(--card-color);
+}
+
+[data-theme="evening"] {
+  --primary-color: var(--evening);
+  --secondary-color: var(--secondary-evening);
+  --font-color: var(--card-color);
+}
+
+[data-theme="night"] {
+  --primary-color: var(--night);
+  --secondary-color: var(--secondary-night);
+  --font-color: var(--night-color);
 }
 
 body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-color: var(--day);
   font-size: var(--medium-font-size);
+  color: var(--font-color);
+  background-color: var(--primary-color);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.shadow {
+  box-shadow: 4px 4px 4px var(--secondary-color);
 }
 
 #container {
@@ -51,6 +93,7 @@ option {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  width: max(50vw, 420px);
 }
 
 .current {
@@ -60,9 +103,7 @@ option {
   background-color: white;
   padding: 16px;
   border-radius: 8px;
-  box-shadow: 4px 4px 4px grey;
   color: var(--card-color);
-  width: 480px;
 }
 
 .condition-and-desc {
@@ -101,4 +142,8 @@ option {
 .icon {
   width: calc(var(--medium-font-size) * 2);
   height: calc(var(--medium-font-size) * 2);
+}
+
+.box-shadow {
+  box-shadow: 4px 4px 4px grey;
 }

@@ -38,12 +38,6 @@ export function renderInfo(state, data) {
 }
 
 function changeColorBasedOnTime(time) {
-  const timeOfDay = utils.getTimeOfDay(time);
-  const body = document.querySelector("body");
-  body.style.backgroundColor = `var(${timeOfDay})`;
-  body.style.color =
-    timeOfDay == utils.TimeOfDay.NIGHT
-      ? "var(--night-color)"
-      : "var(--card-color)";
-  return;
+  const theme = utils.getTimeOfDay(time);
+  document.documentElement.setAttribute("data-theme", theme);
 }

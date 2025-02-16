@@ -9,10 +9,10 @@ export const UnitGroup = {
 };
 
 export const TimeOfDay = {
-  DAY: "--day",
-  MORNING: "--morning",
-  NIGHT: "--night",
-  EVENING: "--evening",
+  DAY: "day",
+  MORNING: "morning",
+  NIGHT: "night",
+  EVENING: "evening",
 };
 
 export function getTimeOfDay(time = "11:50:00") {
